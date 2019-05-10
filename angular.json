@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "crm",
       "schematics": {},
       "architect": {
         "build": {
@@ -23,9 +23,35 @@
               "src/assets"
             ],
             "styles": [
+
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/admin-lte/bower_components/jquery/dist/jquery.min.js",
+              "node_modules/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js",
+
+              "node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js",
+              "node_modules/admin-lte/dist/js/adminlte.min.js",
+              "node_modules/admin-lte/dist/js/demo.js",
+              "node_modules/admin-lte/bower_components/datatables.net/js/jquery.dataTables.min.js",
+              "node_modules/admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js",
+              "node_modules/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",
+              
+
+              "node_modules/admin-lte/bower_components/raphael/raphael.min.js",
+              "node_modules/admin-lte/bower_components/morris.js/morris.min.js",
+              "node_modules/admin-lte/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js",
+              "node_modules/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js",
+              "node_modules/admin-lte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js",
+              "node_modules/admin-lte/bower_components/jquery-knob/dist/jquery.knob.min.js",
+              "node_modules/admin-lte/bower_components/moment/min/moment.min.js",
+              "node_modules/admin-lte/bower_components/bootstrap-daterangepicker/daterangepicker.js",
+              "node_modules/admin-lte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
+              "node_modules/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
+              "node_modules/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js"
+            
+
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
