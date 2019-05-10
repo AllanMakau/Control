@@ -2,32 +2,27 @@
 <html>
 
 
-  <body class="hold-transition skin-purple  sidebar-mini">
+<body class="hold-transition skin-purple  sidebar-mini">
 
-     
 
-          <!-- Componente Header-->
-          <crm-header>
+  <div style="height: 100%;">
+    <!-- Componente Header-->
+    <crm-header></crm-header>
+    <!-- ==================-->
+    <!-- Componente Header-->
+    <div class="sidebar" style="background-color: white !important;" data-image="assets/imgs/user2-160x160.jpg">
+      <crm-side></crm-side>
+    </div>
+    <!-- ==================-->
 
-          </crm-header>
-          <!-- ==================-->
-          <!-- Componente Header-->
-          <crm-side>
+    <!-- Componente Centro-->
 
-          </crm-side>
-          <!-- ==================-->
+    <div class="main-panel" style="background-color: white !important;">
+      <router-outlet></router-outlet>
+      <crm-footer></crm-footer>
+    </div>
 
-      
-          <!-- Componente Centro-->
-          <router-outlet>
-              <div  class="container" ></div>
-          </router-outlet>
-          <!-- ==================-->
-        
-          <!-- Componente Centro-->
-          <crm-footer >
+  </div>
+</body>
 
-          </crm-footer>
-          <!-- ==================-->
-  </body>
 </html>
