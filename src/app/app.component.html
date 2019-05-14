@@ -5,20 +5,22 @@
 <body class="hold-transition skin-purple  sidebar-mini">
 
 
-  <div style="height: 100%;">
+  <div style="height: 100% !important;" class="wrapper">
     <!-- Componente Header-->
     <crm-header></crm-header>
     <!-- ==================-->
     <!-- Componente Header-->
-    <div class="sidebar" style="background-color: white !important;" data-image="assets/imgs/user2-160x160.jpg">
+    <div>
       <crm-side></crm-side>
     </div>
     <!-- ==================-->
 
     <!-- Componente Centro-->
 
-    <div class="main-panel" style="background-color: white !important;">
-      <router-outlet></router-outlet>
+    <div >
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
       <crm-footer></crm-footer>
     </div>
 
