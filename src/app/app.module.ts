@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule}  from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,6 +15,8 @@ import { from } from 'rxjs';
 import { UsuarioConsultaComponent } from './usuario/usuario-consulta/usuario-consulta.component';
 import { ResumoComponent } from './resumo/resumo.component';
 import { UsuarioCadastroComponent } from './usuario/usuario-cadastro/usuario-cadastro.component';
+import { CargoCadastroComponent } from './cargo/cargo-cadastro/cargo-cadastro.component';
+import { CargoListaComponent } from './cargo/cargo-lista/cargo-lista.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,15 @@ import { UsuarioCadastroComponent } from './usuario/usuario-cadastro/usuario-cad
     AboutComponent,
     UsuarioConsultaComponent,
     ResumoComponent,
-    UsuarioCadastroComponent
+    UsuarioCadastroComponent,
+    CargoCadastroComponent,
+    CargoListaComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule,
+    Observable
   ],
   providers: [],
   bootstrap: [AppComponent]
