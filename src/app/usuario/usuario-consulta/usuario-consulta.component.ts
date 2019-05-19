@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { usuarioService } from '../usuarioService';
+
 
 @Component({
   selector: 'crm-usuario-consulta',
@@ -6,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioConsultaComponent implements OnInit {
 
-  constructor() { }
+
+  usuarios: Array<any[]>;
+
+  constructor(private usuarioService:usuarioService) { }
 
   ngOnInit() {
+
+      this.listar();
+  }
+
+
+  listar(){
+
+    this.usuarioService.listar().subscribe(dados => this.usuarios = dados);
   }
 
 }
