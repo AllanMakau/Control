@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { cargoService } from '../cargoService';
 
 @Component({
   selector: 'crm-cargo-lista',
@@ -6,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CargoListaComponent implements OnInit {
 
-  constructor() { }
+
+  cargos: Array<any[]>;
+
+  constructor(private cargoService: cargoService) { }
 
   ngOnInit() {
+    this.listar();
+  }
+
+  listar(){
+
+    this.cargoService.listar().subscribe(dados => this.cargos = dados);
   }
 
 }
