@@ -3,6 +3,7 @@ import { usuarioService } from '../usuarioService';
 import { Route } from '@angular/router';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'crm-usuario-cadastro',
   templateUrl: './usuario-cadastro.component.html'
@@ -12,25 +13,46 @@ import { Observable } from 'rxjs';
 export class UsuarioCadastroComponent implements OnInit {
 
 
-  usuario: any;
-  constructor(private usuarioService:usuarioService) { }
+  private usuario: any[]
+
+  
+  constructor(private usuarioService:usuarioService) { 
+
+    this.usuario
+
+    /*
+this.usuario = 
+  
+                  {
+                  "nome":"Alan lima", 
+                  "login":"ajlima", 
+                  "senha":"123456", 
+                  "email":"alan.makau@gmail.com",
+                  "funcional":"GHGTR"}
+        */        
+
+       
+              }
+
+ 
 
   ngOnInit() {
-    this.usuario = {}
+
+    
   }
 
-  cadatrar(usuario){
-
-   //   this.usuarioService.salvar(this.usuario).subscribe(resposta => {
-     //   this.usuario.push(resposta);
+  cadastrar(usuario){
+    console.log(usuario);
+      this.usuarioService.salvar(usuario).subscribe(resposta => {
+       this.usuario.push(resposta);
   
        
-      //});
-
-      console.log("testando");
-      console.log(usuario);
-
-
+      });
   }
 
+
+  alerta(){
+
+    alert('alertando')
+  }
 }

@@ -24,7 +24,7 @@ export class usuarioService{
 
 
     salvar(usuario:any){
-        return this.http.post(usuario,this.urlUsuario);
+        return this.http.post(this.urlUsuario,usuario);
       }
 
 
