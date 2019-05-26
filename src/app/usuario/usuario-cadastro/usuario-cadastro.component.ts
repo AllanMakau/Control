@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { usuarioService } from '../usuarioService';
 import { Route } from '@angular/router';
 import { Observable } from 'rxjs';
+import { user } from '../usuariomodel';
+
 
 
 @Component({
@@ -13,46 +15,31 @@ import { Observable } from 'rxjs';
 export class UsuarioCadastroComponent implements OnInit {
 
 
-  private usuario: any[]
+  usuario : user;
+   
+  constructor(private usuarioService:usuarioService) {
+    this.usuario = new user();
+  }
+            
+             
 
-  
-  constructor(private usuarioService:usuarioService) { 
-
-    this.usuario
-
-    /*
-this.usuario = 
-  
-                  {
-                  "nome":"Alan lima", 
-                  "login":"ajlima", 
-                  "senha":"123456", 
-                  "email":"alan.makau@gmail.com",
-                  "funcional":"GHGTR"}
-        */        
-
-       
-              }
-
- 
 
   ngOnInit() {
 
     
   }
 
-  cadastrar(usuario){
-    console.log(usuario);
-      this.usuarioService.salvar(usuario).subscribe(resposta => {
-       this.usuario.push(resposta);
-  
-       
+  cadastrar(){
+      this.usuarioService.cadastrar(this.usuario).subscribe(resposta => {
       });
   }
 
-
-  alerta(){
-
-    alert('alertando')
+  editar(){
+      this.usuarioService.editar(this.usuario).subscribe(resposta => {
+      });
   }
+
+  
+
+
 }

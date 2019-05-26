@@ -1,9 +1,8 @@
 <!-- INÍCIO DO CONTEÚDO -->
     <section class="content">
 
-        <form   class="form-group" (ngSubmit)='cadastrar(usuario)'>
-            
-
+        <form  #form="ngForm"  class="form-group" (ngSubmit)='cadastrar()'>
+        
         <div class="row">
             <br/>
             <legend class="col-form-label col-sm-12 pt-10">Dados do Usuário</legend>
@@ -12,18 +11,19 @@
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="name">Nome</label>
-                <input type="text" ng-model="usuario.nome" class="form-control" name="usuario.nome" placeholder="Nome">
+                <input type="text" [(ngModel)]="usuario.nome" class="form-control" name="nome" placeholder="Nome">
+             
                 
             </div>
 
             <div class="form-group col-md-2">
                 <label for="name">Login</label>
-                <input type="text" ng-model="usuario.login" class="form-control" name="usuario.login" placeholder="Login">
+                <input type="text" [(ngModel)]="usuario.login" class="form-control" name="login" placeholder="Login">
             </div>
 
             <div class="form-group col-md-2">
                 <label for="name">Senha</label>
-                <input type="password" ng-model="usuario.senha" class="form-control" name="usuario.senha" placeholder="Senha">
+                <input type="password" [(ngModel)]="usuario.senha" class="form-control" name="senha" placeholder="Senha">
             </div>
 
         </div>
@@ -33,12 +33,12 @@
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="name">Email</label>
-                <input type="text" ng-model="usuario.email" class="form-control" name="usuario.email" placeholder="Email">
+                <input type="text" [(ngModel)]="usuario.email" class="form-control" name="email" placeholder="Email">
             </div>
 
             <div class="form-group col-md-2">
                 <label for="name">Funcional</label>
-                <input type="text" ng-model="usuario.funcional" class="form-control" name="usuario.funcional" placeholder="Funcional">
+                <input type="text" [(ngModel)]="usuario.funcional" class="form-control" name="funcional" placeholder="Funcional">
             </div>
 
         </div>
