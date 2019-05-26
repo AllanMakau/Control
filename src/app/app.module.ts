@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule}  from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -39,7 +40,7 @@ import { usuarioService } from './usuario/usuarioService';
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
+    HttpClientModule,FormsModule
   ],
   providers: [cargoService, usuarioService],
   bootstrap: [AppComponent]
