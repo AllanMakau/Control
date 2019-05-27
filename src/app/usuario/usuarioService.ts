@@ -31,4 +31,8 @@ export class usuarioService{
         return this.http.put(this.urlUsuario,usuario);
     }
 
+    excluir(id:number){
+        return this.http.delete(this.urlUsuario+"/"+id);
+    }
+
 }

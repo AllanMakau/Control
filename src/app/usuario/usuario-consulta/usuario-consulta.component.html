@@ -1,6 +1,4 @@
-
-zz
-    <section class="content-header">
+   <section class="content-header">
         <h1>
           Lista de Usuários
         </h1>
@@ -19,6 +17,7 @@ zz
                       <th>Email</th>
                       <th>Funcional</th>
                       <th>Ativo</th>
+                      <th>Ação</th>
                     </tr>
                     </thead>
   
@@ -31,6 +30,18 @@ zz
                       <td>{{usuario.email}}</td>
                       <td>{{usuario.funcional}}</td>
                       <td>{{usuario.ativo}}</td>
+                      <td>
+
+                        <div>
+                          <button class="btn btn-success ">
+                                <span class="fa fa-pencil"></span>
+                          </button>
+                          
+                          <button class="btn btn-danger"  (click)="excluir(usuario.id)" >
+                            <span class="fa fa-trash"></span>
+                          </button>
+                        </div>  
+                      </td>
                     </tr>
   
                     </tbody>

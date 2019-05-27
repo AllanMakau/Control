@@ -1,59 +1,55 @@
 <!-- INÍCIO DO CONTEÚDO -->
     <section class="content">
 
-        <form  #form="ngForm"  class="form-group" (ngSubmit)='cadastrar()'>
+
+        {{form.valid}}
+        {{form.value | json}}
+        <form  #form="ngForm"  class="form-group" (ngSubmit)='cadastrar()' >
         
         <div class="row">
             <br/>
             <legend class="col-form-label col-sm-12 pt-10">Dados do Usuário</legend>
         </div>
 
+
         <div class="row">
-            <div class="form-group col-md-4">
+            
+            <crm-input-container class="form-group col-md-4" erroMessage="Campo obrigatório" label="Nome" >
                 <label for="name">Nome</label>
-                <input type="text" [(ngModel)]="usuario.nome" class="form-control" name="nome" placeholder="Nome">
-             
-                
-            </div>
+                <input class="form-control" [(ngModel)]="usuario.nome"  name="nome"  ngModel required minlength="5" autocomplete="off">
+            </crm-input-container>
 
-            <div class="form-group col-md-2">
-                <label for="name">Login</label>
-                <input type="text" [(ngModel)]="usuario.login" class="form-control" name="login" placeholder="Login">
-            </div>
+            <crm-input-container class="form-group col-md-2" erroMessage="Campo obrigatório" label="Nome" >
+                    <label for="name">Login</label>
+                    <input type="text" [(ngModel)]="usuario.login" required class="form-control" name="login" placeholder="Login">
+            </crm-input-container>
 
-            <div class="form-group col-md-2">
-                <label for="name">Senha</label>
-                <input type="password" [(ngModel)]="usuario.senha" class="form-control" name="senha" placeholder="Senha">
-            </div>
+
+            <crm-input-container class="form-group col-md-2" erroMessage="Campo obrigatório" label="Nome" >
+                    <label for="name">Senha</label>
+                   <input type="password" [(ngModel)]="usuario.senha" required  class="form-control" name="senha" placeholder="Senha">
+            </crm-input-container>
 
         </div>
 
 
 
         <div class="row">
-            <div class="form-group col-md-4">
-                <label for="name">Email</label>
-                <input type="text" [(ngModel)]="usuario.email" class="form-control" name="email" placeholder="Email">
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="name">Funcional</label>
-                <input type="text" [(ngModel)]="usuario.funcional" class="form-control" name="funcional" placeholder="Funcional">
-            </div>
-
+            <crm-input-container class="form-group col-md-4" erroMessage="Campo obrigatório" label="Email" >
+                    <label for="email">Email</label>
+                    <input class="form-control" [(ngModel)]="usuario.email"  name="email"  ngModel required minlength="5" autocomplete="off">
+                </crm-input-container>
+    
+                <crm-input-container class="form-group col-md-2" erroMessage="Campo obrigatório" label="Funcional" >
+                        <label for="funcional">Funcional</label>
+                        <input type="text" [(ngModel)]="usuario.funcional" required class="form-control" name="funcional" placeholder="funcional">
+                </crm-input-container>
         </div>
 
-        <div class="row">
-
-            <div class="col-md-12">
-                    
-                    <div class="col-lg-12 form-group">
-                        <input id="btnFrete" value="calcular Frete" class="btn btn-primary form-control" type="submit" />   
-                      </div>
-                    
-                <a [routerLink]="['/usuarioConsulta']" class="btn btn-default">Voltar</a>
-            </div>
-        </div>
+        
+        <div class="form-group">
+            <input id="cadastrar" value="Cadastrar" [disabled]="!form.valid" class="btn btn-primary btn-block" type="submit" />   
+         </div>
 
     </form>
 

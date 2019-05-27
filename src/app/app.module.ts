@@ -19,6 +19,7 @@ import { CargoCadastroComponent } from './cargo/cargo-cadastro/cargo-cadastro.co
 import { CargoListaComponent } from './cargo/cargo-lista/cargo-lista.component';
 import { cargoService } from './cargo/cargoService';
 import { usuarioService } from './usuario/usuarioService';
+import { InputComponent } from './shared/input/input.component';
 
 
 
@@ -35,6 +36,7 @@ import { usuarioService } from './usuario/usuarioService';
     UsuarioCadastroComponent,
     CargoCadastroComponent,
     CargoListaComponent,
+    InputComponent,
 
   ],
   imports: [
