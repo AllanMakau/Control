@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { usuarioService } from '../usuarioService';
+import { user } from '../usuariomodel';
 
 
 @Component({
@@ -9,7 +10,9 @@ import { usuarioService } from '../usuarioService';
 export class UsuarioConsultaComponent implements OnInit {
 
 
-  usuarios: Array<any[]>;
+  usuarios: Array<user[]>;
+
+
 
   constructor(private usuarioService:usuarioService) { }
 
@@ -20,8 +23,14 @@ export class UsuarioConsultaComponent implements OnInit {
 
 
   listar(){
-
     this.usuarioService.listar().subscribe(dados => this.usuarios = dados);
   }
+
+  excluir(id : number){
+    this.usuarioService.excluir(id).subscribe(resposta => {
+      this.listar();
+    });
+    
+}
 
 }
