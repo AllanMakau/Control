@@ -24,7 +24,14 @@ export class usuarioService{
 
 
     cadastrar(usuario:user){
-        return this.http.post(this.urlUsuario,usuario);
+        if(usuario.id == null){
+            console.log("cadastrando")
+            return this.http.post(this.urlUsuario,usuario);
+        }else {
+            console.log("Editando")
+            return this.http.put(this.urlUsuario,usuario);
+        }
+        
       }
 
     editar(usuario:user){
@@ -33,6 +40,11 @@ export class usuarioService{
 
     excluir(id:number){
         return this.http.delete(this.urlUsuario+"/"+id);
+    }
+
+    obterPorId(id){
+
+        return this.http.get(this.urlUsuario+"/"+id);
     }
 
 }

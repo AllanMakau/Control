@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { usuarioService } from '../usuarioService';
+import { UsuarioCadastroComponent } from '../usuario-cadastro/usuario-cadastro.component';
 import { user } from '../usuariomodel';
+import { Route, Routes, Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,10 +16,9 @@ export class UsuarioConsultaComponent implements OnInit {
 
 
 
-  constructor(private usuarioService:usuarioService) { }
+  constructor(private usuarioService:usuarioService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit() {
-
       this.listar();
   }
 
@@ -33,4 +34,9 @@ export class UsuarioConsultaComponent implements OnInit {
     
 }
 
+onEdit(id){
+  this.router.navigate(['editar',id]);
+}
+
+  
 }

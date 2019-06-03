@@ -11,8 +11,11 @@ export const ROUTES: Routes = [
 
     {path: '' , component: HomeComponent},
     {path: 'about' , component: AboutComponent},
+    //Usuarios Rotas
     {path: 'usuarioConsulta' , component: UsuarioConsultaComponent},
-    {path: 'resumo' , component: ResumoComponent},
     {path: 'usuarioCadastro' , component: UsuarioCadastroComponent},
-    {path: 'cargoLista' , component: CargoListaComponent}
+    {path: 'editar/:id' , component: UsuarioCadastroComponent},
+    //Cargo Rotas
+    {path: 'cargoLista' , component: CargoListaComponent},
+    {path: 'resumo' , component: ResumoComponent}
 ]
