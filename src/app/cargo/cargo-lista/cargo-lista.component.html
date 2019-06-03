@@ -17,22 +17,37 @@
                   <tr>
                     <th>cód</th>
                     <th>Descricao</th>
+                    <th>Ação</th>
                   </tr>
                   </thead>
-
-                  <tbody *ngFor="let c of cargos" > 
-
+                  <tbody *ngFor="let cargo of cargos" > 
                   <tr>
-                    <td>{{c.id}}</td>
-                    <td>{{c.descricao}}</td>
+                    <td>{{cargo.id}}</td>
+                    <td>{{cargo.descricao}}</td>
+                    <div>
+                      <button class="btn btn-success " (click) = "onEdit(cargo.id)">
+                            <span class="fa fa-pencil"></span>
+                      </button>
+                      <button class="btn btn-danger"  (click)="excluir(cargo.id)" >
+                        <span class="fa fa-trash"></span>
+                      </button>
+                    </div>  
                   </tr>
-
                   </tbody>
               </table>
           </div>
           <!-- /.box-body -->
         </div>
+
+        <div id="actions" class="row">	
+                      
+          <div class="col-md-2">	      
+                 <a [routerLink]="['/cargoCadastro']" class="btn btn-primary">Novo </a>	    
+          </div>	  
+      </div>	
 </div>
+
+
 
 
 

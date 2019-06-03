@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { usuarioService } from '../usuarioService';
-import { Route, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms'
 import { user } from '../usuariomodel';
 

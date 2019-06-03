@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { usuarioService } from '../usuarioService';
-import { UsuarioCadastroComponent } from '../usuario-cadastro/usuario-cadastro.component';
 import { user } from '../usuariomodel';
 import { Route, Routes, Router, ActivatedRoute } from '@angular/router';
+import { relative } from 'path';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class UsuarioConsultaComponent implements OnInit {
 }
 
 onEdit(id){
-  this.router.navigate(['editar',id]);
+  this.router.navigate(['usuarioCadastro/editar/',id]);
 }
 
   

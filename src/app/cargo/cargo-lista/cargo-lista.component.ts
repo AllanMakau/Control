@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { cargoService } from '../cargoService';
+import { Route, Routes, Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'crm-cargo-lista',
@@ -10,15 +11,25 @@ export class CargoListaComponent implements OnInit {
 
   cargos: Array<any[]>;
 
-  constructor(private cargoService: cargoService) { }
+  constructor(private service: cargoService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.listar();
   }
 
   listar(){
-
-    this.cargoService.listar().subscribe(dados => this.cargos = dados);
+    this.service.listar().subscribe(dados => this.cargos = dados);
   }
+
+  excluir(id : number){
+    this.service.excluir(id).subscribe(resposta => {
+      this.listar();
+    });
+    
+}
+
+onEdit(id){
+  this.router.navigate(['cargoCadastro/editar',id]);
+}
 
 }

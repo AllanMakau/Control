@@ -19,7 +19,7 @@ export class usuarioService{
 
     
     listar(){
-        return this.http.get<any[]>( `${API}`+"/usuarios")
+        return this.http.get<any[]>( `${this.urlUsuario}`)
     }
 
 

@@ -5,6 +5,7 @@ import { UsuarioConsultaComponent } from './usuario/usuario-consulta/usuario-con
 import { ResumoComponent } from './resumo/resumo.component';
 import { UsuarioCadastroComponent } from './usuario/usuario-cadastro/usuario-cadastro.component';
 import { CargoListaComponent } from './cargo/cargo-lista/cargo-lista.component';
+import { CargoCadastroComponent } from './cargo/cargo-cadastro/cargo-cadastro.component';
 
 
 export const ROUTES: Routes = [
@@ -14,8 +15,10 @@ export const ROUTES: Routes = [
     //Usuarios Rotas
     {path: 'usuarioConsulta' , component: UsuarioConsultaComponent},
     {path: 'usuarioCadastro' , component: UsuarioCadastroComponent},
-    {path: 'editar/:id' , component: UsuarioCadastroComponent},
+    {path: 'usuarioCadastro/editar/:id' , component: UsuarioCadastroComponent},
     //Cargo Rotas
     {path: 'cargoLista' , component: CargoListaComponent},
+    {path: 'cargoCadastro' , component: CargoCadastroComponent},
+    {path: 'cargoCadastro/editar/:id' , component: CargoCadastroComponent},
     {path: 'resumo' , component: ResumoComponent}
 ]
